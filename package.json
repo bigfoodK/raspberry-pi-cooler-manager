@@ -1,0 +1,27 @@
+{
+  "name": "raspberry-pi-cooler-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node .",
+    "watch-start": "nodemon .",
+    "build": "tsc",
+    "watch-build": "tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bigfoodK/raspberry-pi-cooler-manager.git"
+  },
+  "author": "bigfoodK",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bigfoodK/raspberry-pi-cooler-manager/issues"
+  },
+  "homepage": "https://github.com/bigfoodK/raspberry-pi-cooler-manager#readme",
+  "dependencies": {
+    "nodemon": "^1.19.0",
+    "typescript": "^3.4.5"
+  }
+}
