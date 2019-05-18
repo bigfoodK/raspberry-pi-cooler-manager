@@ -1,7 +1,20 @@
 import TemperatureObserver from "./TemperatureObserver";
+import CoolerManager from "./CoolerManager";
+
+const temperatureSlopeConstant = 0.65 / 15;
+const temperatureXOffset = 45;
+const temperatureYOffset = 0.4;
 
 const temperatureObserver = new TemperatureObserver();
 
-temperatureObserver.on('onTempChange', (temp, oldTemp) => {
-  console.log(temp, oldTemp, temp + oldTemp);
+const coolerManager = new CoolerManager();
+
+function getCoolerSpeedAccordingToTemperature(temperature: number) {
+  return temperatureSlopeConstant * (temperature - temperatureXOffset) + temperatureYOffset;
+}
+
+temperatureObserver.on('onTempChange', (temp) => {
+  const coolerSpeed = getCoolerSpeedAccordingToTemperature(temp / 1000);
+  console.log(temp / 1000, coolerSpeed);
+  coolerManager.setSpeed(coolerSpeed);
 });
