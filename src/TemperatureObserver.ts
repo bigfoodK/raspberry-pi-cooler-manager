@@ -12,7 +12,7 @@ class TemperatureObserver extends EventEmitter {
     return new Promise((resolve, reject) => {
       readFile('/sys/class/thermal/thermal_zone0/temp', 'utf-8', (err, data) => {
         if (!err) {
-          resolve(parseInt(data));
+          resolve(parseInt(data) / 1000);
           return;
         }
 
