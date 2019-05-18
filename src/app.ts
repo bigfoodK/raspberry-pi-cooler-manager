@@ -15,6 +15,5 @@ function getCoolerSpeedAccordingToTemperature(temperature: number) {
 
 temperatureObserver.on('onTempChange', (temp) => {
   const coolerSpeed = getCoolerSpeedAccordingToTemperature(temp);
-  console.log(temp, coolerSpeed);
   coolerManager.setSpeed(coolerSpeed);
 });
